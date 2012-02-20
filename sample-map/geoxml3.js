@@ -173,12 +173,13 @@ geoXML3.parser = function (options) {
         if (path.length === 1) {
           // Polygons/lines not supported in v3, so only plot markers
           coords = path[0].split(',');
-          console.log(coords, placemark);
           placemark.point = {
             lat: parseFloat(coords[1]), 
             lng: parseFloat(coords[0]), 
             alt: parseFloat(coords[2])
           };
+          console.log(coords, placemark);
+          QQQ = parserOptions;
           if (parserOptions.zoom && !!google.maps) {
             doc.bounds = doc.bounds || new google.maps.LatLngBounds();
             doc.bounds.extend(new google.maps.LatLng(placemark.point.lat, placemark.point.lng));
