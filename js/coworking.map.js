@@ -30,9 +30,9 @@ $Map.generate = function() {
     var myLatlng = new google.maps.LatLng(39.397, -100.644);
     console.log(2);
     var myOptions = {
-        zoom: 5,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        zoom: 5
+        ,center: myLatlng
+//         ,mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     console.log(3);
     var map = this.map =
