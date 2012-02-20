@@ -36,7 +36,7 @@ $Map.generate = function() {
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent(metadata[i].Name);
+                infowindow.setContent('<a href="google.com">' + metadata[i].Name + '</a>');
                 infowindow.open(map, marker);
             }
         })(marker, i));
