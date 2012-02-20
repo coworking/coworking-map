@@ -25,6 +25,7 @@ $Map.add_metadata = function(data) {
 };
 
 $Map.generate = function() {
+    console.log(this.data);
     var locations = [
       ['Bondi Beach', -33.890542, 151.274856, 4],
       ['Coogee Beach', -33.923036, 151.259052, 5],
@@ -32,16 +33,10 @@ $Map.generate = function() {
       ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
       ['Maroubra Beach', -33.950198, 151.259302, 1]
     ];
-//     var map = this.map = new google.maps.Map($('#map'), {
-//       zoom: 5,
-//       center: new google.maps.LatLng(39.397, -100.644),
-//       mapTypeId: google.maps.MapTypeId.ROADMAP
-//     });
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 5,
       center: new google.maps.LatLng(39.397, -100.644),
-//       center: new google.maps.LatLng(-33.92, 151.25),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
