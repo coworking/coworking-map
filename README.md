@@ -1,6 +1,12 @@
 ## A Coworking Sites Map of the World
 
-This simple static git repo creates a google map showing all the coworking sites in stored in another git repo: https://github.com/coworking/coworking-metadata
+This simple static git repo creates a google map that you can view here:
+
+http://coworking.github.com/coworking-map/
+
+showing all the coworking sites in stored in another git repo:
+
+https://github.com/coworking/coworking-metadata
 
 The data is pulled over as a jsonp payload straight from github. So it is all very open and all very realtime.
 
