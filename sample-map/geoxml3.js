@@ -168,7 +168,6 @@ geoXML3.parser = function (options) {
         coords = geoXML3.nodeValue(node.getElementsByTagName('coordinates')[0]).trim();
         coords = coords.replace(/\s+/g, ' ').replace(/, /g, ',');
         path = coords.split(' ');
-console.log(3);return;
 
         // What sort of placemark?
         if (path.length === 1) {
@@ -183,6 +182,7 @@ console.log(3);return;
             doc.bounds = doc.bounds || new google.maps.LatLngBounds();
             doc.bounds.extend(new google.maps.LatLng(placemark.point.lat, placemark.point.lng));
           }
+console.log(4);return;
 
           if (!!parserOptions.createMarker) {
             // User-defined marker handler
