@@ -33,7 +33,8 @@ $Map.generate = function() {
         var data = metadata[i];
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(data.geo.lat, data.geo.long),
-            map: map
+            map: map,
+            title: data.Name
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker, data) {
