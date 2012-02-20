@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title>geoxml3 Markers Example</title>
+  <style type="text/css">
+    html, body, #map_canvas {width: 100%; height: 100%; margin: 0; padding: 0;}
+    .infowindow * {font-size: 90%; margin: 0}
+  </style>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript" src="geoxml3.js"></script>
+  <script type="text/javascript">
+    function initialize() {
+      var myLatlng = new google.maps.LatLng(39.397, -100.644);
+      var myOptions = {
+        zoom: 5,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+
+      var geoXml = new geoXML3.parser({map: map});
+      geoXml.parse('../bgmm/chapter_09/state_capitals.kml');
+    };
+  </script>
+</head>
+<body onload="initialize()">
+  <div id="map_canvas"></div>
+
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try { 
+      var pageTracker = _gat._getTracker("UA-1556555-8");
+      pageTracker._trackPageview();
+    } catch(err) {} 
+  </script>
+</body>
+</html>
