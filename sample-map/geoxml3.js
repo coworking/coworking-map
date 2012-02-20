@@ -209,7 +209,7 @@ geoXML3.parser = function (options) {
           }
         }
       }
-return;
+console.log(1);return;
       if (!!doc.reload && !!doc.markers) {
         for (i = doc.markers.length - 1; i >= 0 ; i--) {
           if (!doc.markers[i].active) {
