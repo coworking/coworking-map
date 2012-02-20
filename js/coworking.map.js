@@ -152,7 +152,7 @@ $Map.generate = function() {
         }
     };
 
-    Demo.init();
+    event.addDomListener(window, 'load', Demo.init, Demo);
 };
 
 // Close  wrapper function and call it.
