@@ -183,30 +183,30 @@ geoXML3.parser = function (options) {
             doc.bounds.extend(new google.maps.LatLng(placemark.point.lat, placemark.point.lng));
           }
 
-          if (!!parserOptions.createMarker) {
-            // User-defined marker handler
-            // parserOptions.createMarker(placemark, doc);
-          } else {
-            // Check to see if this marker was created on a previous load of this document
-            var found = false;
-            if (!!doc) {
-              doc.markers = doc.markers || [];
-              if (doc.reload) {
-                for (i = 0; i < doc.markers.length; i++) {
-                  if (doc.markers[i].getPosition().equals(markerOptions.position)) {
-                    found = doc.markers[i].active = true;
-                    break;
-                  }
-                }
-              } 
-            }
-
-            if (!found) {
-              // Call the built-in marker creator
-              marker = createMarker(placemark, doc);
-              marker.active = true;
-            }
-          }
+//           if (!!parserOptions.createMarker) {
+//             // User-defined marker handler
+//             parserOptions.createMarker(placemark, doc);
+//           } else {
+//             // Check to see if this marker was created on a previous load of this document
+//             var found = false;
+//             if (!!doc) {
+//               doc.markers = doc.markers || [];
+//               if (doc.reload) {
+//                 for (i = 0; i < doc.markers.length; i++) {
+//                   if (doc.markers[i].getPosition().equals(markerOptions.position)) {
+//                     found = doc.markers[i].active = true;
+//                     break;
+//                   }
+//                 }
+//               } 
+//             }
+// 
+//             if (!found) {
+//               // Call the built-in marker creator
+//               marker = createMarker(placemark, doc);
+//               marker.active = true;
+//             }
+//           }
         }
       }
       if (!!doc.reload && !!doc.markers) {
