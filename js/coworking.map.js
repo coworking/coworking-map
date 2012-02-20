@@ -11,12 +11,13 @@ $Map.init = function() {
 };
 
 $Map.run = function() {
-    $.ajax({
-        'url': this.metadata_url,
-        'dataType': 'jsonp',
-        'crossDomain': true,
-        'jsonp': false
-    });
+    this.generate();
+//     $.ajax({
+//         'url': this.metadata_url,
+//         'dataType': 'jsonp',
+//         'crossDomain': true,
+//         'jsonp': false
+//     });
 };
 
 $Map.add_metadata = function(data) {
