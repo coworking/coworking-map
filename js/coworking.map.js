@@ -152,7 +152,7 @@ $Map.generate = function() {
         }
     };
 
-    event.addDomListener(window, 'load', Demo.init, Demo);
+    google.maps.event.addDomListener(window, 'load', Demo.init, Demo);
 };
 
 // Close  wrapper function and call it.
