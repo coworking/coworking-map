@@ -47,5 +47,13 @@
     }
   })(jQuery);
   </script>
+  <script type="text/javascript">
+      (function() {
+          jQuery(function() {
+              coworking = new Coworking.Map;
+              coworking.run(location.path);
+          });
+      })();
+  </script>
 </body>
 </html>
