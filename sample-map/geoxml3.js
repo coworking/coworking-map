@@ -182,7 +182,6 @@ geoXML3.parser = function (options) {
             doc.bounds = doc.bounds || new google.maps.LatLngBounds();
             doc.bounds.extend(new google.maps.LatLng(placemark.point.lat, placemark.point.lng));
           }
-console.log(4);return;
 
           if (!!parserOptions.createMarker) {
             // User-defined marker handler
@@ -209,6 +208,7 @@ console.log(4);return;
             }
           }
         }
+console.log(4);return;
       }
       if (!!doc.reload && !!doc.markers) {
         for (i = doc.markers.length - 1; i >= 0 ; i--) {
