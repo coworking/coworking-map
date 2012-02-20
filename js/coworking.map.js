@@ -45,7 +45,7 @@ $Map.generate = function() {
     var marker, i;
 
     var metadata = this.metadata;
-    for (i = 0, l = metadata.length; i < l; i++) {  
+    for (var i = 0, l = metadata.length; i < l; i++) {  
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(metadata[i].geo.lat, metadata[i].geo.long),
         map: map
