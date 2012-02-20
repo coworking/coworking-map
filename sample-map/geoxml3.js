@@ -143,7 +143,6 @@ geoXML3.parser = function (options) {
         processStyles(doc);
       }
       
-return;
       // Parse placemarks
       if (!!doc.reload && !!doc.markers) {
         for (i = 0; i < doc.markers.length; i++) {
@@ -210,6 +209,7 @@ return;
           }
         }
       }
+return;
       if (!!doc.reload && !!doc.markers) {
         for (i = doc.markers.length - 1; i >= 0 ; i--) {
           if (!doc.markers[i].active) {
