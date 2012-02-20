@@ -7,17 +7,15 @@ window.$Map = (
 $Map.metadata_url =
     'https://raw.github.com/coworking/coworking-metadata/master/metadata.jsonp';
 
-$Map.init = function() {
-};
+$Map.init = function() {};
 
 $Map.run = function() {
-    this.generate();
-//     $.ajax({
-//         'url': this.metadata_url,
-//         'dataType': 'jsonp',
-//         'crossDomain': true,
-//         'jsonp': false
-//     });
+    $.ajax({
+        'url': this.metadata_url,
+        'dataType': 'jsonp',
+        'crossDomain': true,
+        'jsonp': false
+    });
 };
 
 $Map.add_metadata = function(data) {
@@ -26,21 +24,29 @@ $Map.add_metadata = function(data) {
 };
 
 $Map.generate = function() {
-    console.log(1);
-    var myLatlng = new google.maps.LatLng(39.397, -100.644);
-    console.log(2);
-    var myOptions = {
-        zoom: 5
-        ,center: myLatlng
-//         ,mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    console.log(3);
-    var map = this.map =
-        new google.maps.Map($('.map_canvas'), myOptions);
-    console.log(4);
+    var map = new google.maps.Map($('.map'), {
+      zoom: 5,
+      center: new google.maps.LatLng(39.397, -100.644),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 
-//     var geoXml = new geoXML3.parser({map: map});
-//     geoXml.parse('../bgmm/chapter_09/state_capitals.kml');
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+//     for (i = 0; i < locations.length; i++) {  
+//         marker = new google.maps.Marker({
+//             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+//             map: map
+//         });
+//       
+//         google.maps.event.addListener(marker, 'click', (function(marker, i) {
+//             return function() {
+//                 infowindow.setContent(locations[i][0]);
+//                 infowindow.open(map, marker);
+//             }
+//         })(marker, i));
+//     }
 };
 
 // Close  wrapper function and call it.
