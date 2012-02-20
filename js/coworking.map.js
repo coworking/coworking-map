@@ -20,9 +20,13 @@ $Map.run = function() {
 };
 
 $Map.add_metadata = function(data) {
-    $('body').append('<pre>' + YAML.dump(data) + '</pre>');
-    console.log(data);
-}
+    this.metadata = data;
+    this.generate();
+};
+
+$Map.generate = function() {
+
+};
 
 // Close  wrapper function and call it.
 })(jQuery);
