@@ -42,11 +42,9 @@ $Map.generate = function() {
 
     var infowindow = new google.maps.InfoWindow();
 
-    var marker, i;
-
     var metadata = this.metadata;
     for (var i = 0, l = metadata.length; i < l; i++) {  
-      marker = new google.maps.Marker({
+      var marker = new google.maps.Marker({
         position: new google.maps.LatLng(metadata[i].geo.lat, metadata[i].geo.long),
         map: map
       });
