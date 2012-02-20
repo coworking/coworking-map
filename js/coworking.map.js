@@ -28,8 +28,6 @@ $Map.generate = function() {
     var Demo = {
         map: null,
         mapContainer: document.getElementById('mapContainer'),
-        sideContainer: document.getElementById('sideContainer'),
-        generateLink: document.getElementById('generateLink'),
         numMarkers: 40,
         markers: [],
         visibleInfoWindow: null,
@@ -65,12 +63,6 @@ $Map.generate = function() {
                 lng: 0
             };
 
-            var ul = Demo.sideContainer;
-            ul.style.width = 200 + 'px';
-            ul.style.height = Demo.map.getDiv().offsetHeight + 'px';
-
-            // Clear list and map markers.
-            ul.innerHTML = '';
             Demo.clearMarkers();
 
             for (var n = 1; n <= Demo.numMarkers; n++) {
@@ -110,15 +102,6 @@ $Map.generate = function() {
                 google.maps.event.addListener(
                         marker, 'click', Demo.openInfoWindow(infoWindow, marker));
 
-                // Generate list elements for each marker.
-                var li = document.createElement('li');
-                var aSel = document.createElement('a');
-                aSel.href = 'javascript:void(0);';
-                aSel.innerHTML = 'Open Marker #' + n;
-                aSel.onclick = Demo.generateTriggerCallback(marker, 'click');
-                li.appendChild(aSel);
-                ul.appendChild(li);
-
                 // Sum up all lat/lng to calculate center all points.
                 avg.lat += randLatLng.lat();
                 avg.lng += randLatLng.lng();
@@ -136,19 +119,6 @@ $Map.generate = function() {
                 center: firstLatLng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
-
-            // Show generate link only after map tiles finish loading.
-            google.maps.event.addListener(Demo.map, 'tilesloaded', function() {
-                Demo.generateLink.style.display = 'block';
-            });
-
-            // Add onclick handler to generate link.
-            google.maps.event.addDomListener(Demo.generateLink, 'click', function() {
-                Demo.generateRandomMarkers(Demo.map.getCenter());
-            });
-
-            // Generate markers against map center.
-            google.maps.event.trigger(Demo.generateLink, 'click');
         }
     };
 
