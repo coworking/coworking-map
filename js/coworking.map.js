@@ -28,6 +28,7 @@ $Map.generate = function() {
     var Demo = {
         map: null,
         mapContainer: document.getElementById('mapContainer'),
+        generateLink: document.getElementById('generateLink'),
         numMarkers: 40,
         markers: [],
         visibleInfoWindow: null,
@@ -119,6 +120,19 @@ $Map.generate = function() {
                 center: firstLatLng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
+
+            // Show generate link only after map tiles finish loading.
+            google.maps.event.addListener(Demo.map, 'tilesloaded', function() {
+                Demo.generateLink.style.display = 'block';
+            });
+
+            // Add onclick handler to generate link.
+            google.maps.event.addDomListener(Demo.generateLink, 'click', function() {
+                Demo.generateRandomMarkers(Demo.map.getCenter());
+            });
+
+            // Generate markers against map center.
+            google.maps.event.trigger(Demo.generateLink, 'click');
         }
     };
 
