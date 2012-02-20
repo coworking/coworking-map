@@ -210,6 +210,7 @@ geoXML3.parser = function (options) {
         }
       }
       if (!!doc.reload && !!doc.markers) {
+          throw;
         for (i = doc.markers.length - 1; i >= 0 ; i--) {
           if (!doc.markers[i].active) {
             if (!!doc.markers[i].infoWindow) {
