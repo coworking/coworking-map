@@ -203,8 +203,8 @@ geoXML3.parser = function (options) {
 
             if (!found) {
               // Call the built-in marker creator
-              marker = createMarker(placemark, doc);
-              marker.active = true;
+//               marker = createMarker(placemark, doc);
+//               marker.active = true;
             }
           }
         }
