@@ -10,7 +10,7 @@ $Map.metadata_url =
 $Map.init = function() {};
 
 $Map.run = function() {
-    this.generate();return;
+//     this.generate();return;
     $.ajax({
         'url': this.metadata_url,
         'dataType': 'jsonp',
