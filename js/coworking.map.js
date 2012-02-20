@@ -2,7 +2,7 @@
 window.Coworking = {};
 window.$Map = (
     window.Coworking.Map = function() { this.init(); }
-).prototype = new Cog;
+).prototype = new Object();
 
 $Map.metadata_url =
     'https://raw.github.com/coworking/coworking-metadata/master/metadata.jsonp';
