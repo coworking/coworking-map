@@ -25,7 +25,7 @@ $Map.add_metadata = function(data) {
 };
 
 $Map.generate = function() {
-    console.log(this.data);
+    console.log(this.metadata);
     var locations = [
       ['Bondi Beach', -33.890542, 151.274856, 4],
       ['Coogee Beach', -33.923036, 151.259052, 5],
