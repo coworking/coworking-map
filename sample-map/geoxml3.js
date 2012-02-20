@@ -151,6 +151,7 @@ geoXML3.parser = function (options) {
       }
       var placemark, node, coords, path, marker;
       var placemarkNodes = responseXML.getElementsByTagName('Placemark');
+console.log(2);return;
       for (i = 0; i < placemarkNodes.length; i++) {
         // Init the placemark object
         node = placemarkNodes[i];
@@ -209,7 +210,6 @@ geoXML3.parser = function (options) {
           }
         }
       }
-console.log(1);return;
       if (!!doc.reload && !!doc.markers) {
         for (i = doc.markers.length - 1; i >= 0 ; i--) {
           if (!doc.markers[i].active) {
