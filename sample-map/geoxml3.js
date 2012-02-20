@@ -151,6 +151,7 @@ geoXML3.parser = function (options) {
       }
       var placemark, node, coords, path, marker;
       var placemarkNodes = responseXML.getElementsByTagName('Placemark');
+      console.log(placemarkNodes);
       for (i = 0; i < placemarkNodes.length; i++) {
         // Init the placemark object
         node = placemarkNodes[i];
