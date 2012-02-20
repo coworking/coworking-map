@@ -151,7 +151,6 @@ geoXML3.parser = function (options) {
       }
       var placemark, node, coords, path, marker;
       var placemarkNodes = responseXML.getElementsByTagName('Placemark');
-console.log(2);return;
       for (i = 0; i < placemarkNodes.length; i++) {
         // Init the placemark object
         node = placemarkNodes[i];
@@ -169,6 +168,7 @@ console.log(2);return;
         coords = geoXML3.nodeValue(node.getElementsByTagName('coordinates')[0]).trim();
         coords = coords.replace(/\s+/g, ' ').replace(/, /g, ',');
         path = coords.split(' ');
+console.log(3);return;
 
         // What sort of placemark?
         if (path.length === 1) {
