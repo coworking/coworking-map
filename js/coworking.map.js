@@ -51,10 +51,18 @@ $Map.createContent = function(data) {
     var url = data.URL;
     var addr = data.address;
     var content = '';
-    if (url)
-        content += '<a href="' + url + '">' + name + '</a>';
-    else
+    if (url) {
+        var target = Name
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '_');
+        content +=
+            '<a href="' + url +
+            '" target="_' + target +
+            '">' + name + '</a>';
+    }
+    else {
         content += name;
+    }
     content += '<br/>';
     if (addr) {
         content += '<pre>';
