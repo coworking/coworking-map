@@ -178,8 +178,6 @@ geoXML3.parser = function (options) {
             lng: parseFloat(coords[0]), 
             alt: parseFloat(coords[2])
           };
-          console.log(coords, placemark);
-          QQQ = parserOptions;
           if (parserOptions.zoom && !!google.maps) {
             doc.bounds = doc.bounds || new google.maps.LatLngBounds();
             doc.bounds.extend(new google.maps.LatLng(placemark.point.lat, placemark.point.lng));
@@ -187,7 +185,7 @@ geoXML3.parser = function (options) {
 
           if (!!parserOptions.createMarker) {
             // User-defined marker handler
-            parserOptions.createMarker(placemark, doc);
+            // parserOptions.createMarker(placemark, doc);
           } else {
             // Check to see if this marker was created on a previous load of this document
             var found = false;
