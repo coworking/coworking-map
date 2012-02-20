@@ -36,12 +36,12 @@ $Map.generate = function() {
             map: map
         });
 
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        google.maps.event.addListener(marker, 'click', (function(marker, data) {
             return function() {
                 infowindow.setContent(self.createContent(data));
                 infowindow.open(map, marker);
             }
-        })(marker, i));
+        })(marker, data));
     }
 };
 
