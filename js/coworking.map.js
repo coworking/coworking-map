@@ -40,7 +40,8 @@ $Map.generate = function() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 5,
-      center: new google.maps.LatLng(-33.92, 151.25),
+      center: new google.maps.LatLng(39.397, -100.644),
+//       center: new google.maps.LatLng(-33.92, 151.25),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
