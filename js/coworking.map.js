@@ -20,6 +20,7 @@ $Map.run = function() {
 };
 
 $Map.add_metadata = function(data) {
+    $('body').append('<pre>' + YAML.dump(data) + '</pre>');
     console.log(data);
 }
 
