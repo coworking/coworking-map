@@ -57,7 +57,7 @@ $Map.createContent = function(data) {
     content += '<br/>';
     if (addr) {
         content += '<pre>';
-        for (var i = 0, l = addr.length; i++) {
+        for (var i = 0, l = addr.length; i < l; i++) {
             if (addr[i] != '.')
                 content += addr[i] + '\n';
         }
