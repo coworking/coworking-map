@@ -28,19 +28,42 @@ $Map.generate = function() {
     var infowindow = new google.maps.InfoWindow();
 
     var metadata = this.metadata;
+    var self = this;
     for (var i = 0, l = metadata.length; i < l; i++) {  
+        var data = metadata[i];
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(metadata[i].geo.lat, metadata[i].geo.long),
+            position: new google.maps.LatLng(data.geo.lat, data.geo.long),
             map: map
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent('<a href="google.com">' + metadata[i].Name + '</a>');
+                infowindow.setContent(self.createContent(data));
                 infowindow.open(map, marker);
             }
         })(marker, i));
     }
+};
+
+$Map.createContent = function(data) {
+    var name = data.Name;
+    var url = data.URL;
+    var addr = data.address;
+    var content = '';
+    if (url)
+        content += '<a href="' + url + '">' + name + '</a>';
+    else
+        content += name;
+    content += '<br/>';
+    if (addr) {
+        content += '<pre>';
+        for (var i = 0, l = addr.length; i++) {
+            if (addr[i] != '.')
+                content += addr[i] + '\n';
+        }
+        content += '</pre>';
+    }
+    return content;
 };
 
 // Close  wrapper function and call it.
