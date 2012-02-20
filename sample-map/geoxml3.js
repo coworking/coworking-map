@@ -205,7 +205,7 @@ geoXML3.parser = function (options) {
               // Call the built-in marker creator
               marker = createMarker(placemark, doc);
               marker.active = true;
-console.log(5);return;
+console.log(placemark, doc, 6);return;
             }
           }
         }
