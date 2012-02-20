@@ -151,7 +151,6 @@ geoXML3.parser = function (options) {
       }
       var placemark, node, coords, path, marker;
       var placemarkNodes = responseXML.getElementsByTagName('Placemark');
-      console.log(placemarkNodes);
       for (i = 0; i < placemarkNodes.length; i++) {
         // Init the placemark object
         node = placemarkNodes[i];
@@ -174,6 +173,7 @@ geoXML3.parser = function (options) {
         if (path.length === 1) {
           // Polygons/lines not supported in v3, so only plot markers
           coords = path[0].split(',');
+          console.log(coords, placemark);
           placemark.point = {
             lat: parseFloat(coords[1]), 
             lng: parseFloat(coords[0]), 
