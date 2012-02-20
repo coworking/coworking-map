@@ -205,10 +205,10 @@ geoXML3.parser = function (options) {
               // Call the built-in marker creator
               marker = createMarker(placemark, doc);
               marker.active = true;
+console.log(5);return;
             }
           }
         }
-console.log(4);return;
       }
       if (!!doc.reload && !!doc.markers) {
         for (i = doc.markers.length - 1; i >= 0 ; i--) {
