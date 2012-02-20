@@ -52,7 +52,7 @@ $Map.createContent = function(data) {
     var addr = data.address;
     var content = '';
     if (url) {
-        var target = Name
+        var target = name
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, '_');
         content +=
