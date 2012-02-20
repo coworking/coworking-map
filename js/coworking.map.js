@@ -24,7 +24,8 @@ $Map.add_metadata = function(data) {
 };
 
 $Map.generate = function() {
-    var map = this.map = new google.maps.Map($('.map'), {
+    console.log('#map');
+    var map = this.map = new google.maps.Map($('#map'), {
       zoom: 5,
       center: new google.maps.LatLng(39.397, -100.644),
       mapTypeId: google.maps.MapTypeId.ROADMAP
