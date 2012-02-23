@@ -2,8 +2,11 @@
 window.Coworking = {};
 window.$Map = (window.Coworking.Map = function() {}).prototype = new Object();
 
-$Map.metadata_url =
-    'https://raw.github.com/coworking/coworking-metadata/master/metadata.jsonp';
+$Map.metadata_url = location.search
+    .replace(/.*?(data=https?:\/\/.*?(?:[;&]|$))?.*/, '$1');
+console.log($Map.metadata_url);
+if (!$Map.metadata_url)
+    $Map.metadata_url = 'https://raw.github.com/coworking/coworking-metadata/master/metadata.jsonp';
 
 $Map.run = function() {
     $.ajax({
