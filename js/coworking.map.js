@@ -22,7 +22,6 @@ $Map.add_metadata = function(data) {
 };
 
 $Map.generate = function() {
-    window.zoom = this.url.param('zoom');
     var lat = Number(this.url.param('lat')) || 39.397;
     var lon = Number(this.url.param('long')) || -100.644;
     var zoom = Number(this.url.param('zoom')) || 3;
