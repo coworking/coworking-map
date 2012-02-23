@@ -22,10 +22,10 @@ $Map.add_metadata = function(data) {
 };
 
 $Map.generate = function() {
-    var lat = Number(this.url.param=('lat')) || 39.397;
-    var lon = Number(this.url.param=('long')) || -100.644;
-    var zoom = Number(this.url.param=('zoom')) || 3;
-    console.log(this.url.param=('zoom'))
+    var lat = Number(this.url.param('lat')) || 39.397;
+    var lon = Number(this.url.param('long')) || -100.644;
+    var zoom = Number(this.url.param('zoom')) || 3;
+    console.log(this.url.param('zoom'))
     console.log(lat, lon, zoom);
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoom,
