@@ -2,11 +2,9 @@
 window.Coworking = {};
 window.$Map = (window.Coworking.Map = function() {}).prototype = new Object();
 
-$Map.metadata_url = location.search
-    .replace(/.*?data=(https?:\/\/.*?[;&]?)?.*/, '$1');
+$Map.metadata_url = $.param('src') ||
+    'https://raw.github.com/coworking/coworking-metadata/master/metadata.jsonp';
 console.log([location.search, $Map.metadata_url]);
-if (!$Map.metadata_url)
-    $Map.metadata_url = 'https://raw.github.com/coworking/coworking-metadata/master/metadata.jsonp';
 
 $Map.run = function() {
     $.ajax({
@@ -23,9 +21,12 @@ $Map.add_metadata = function(data) {
 };
 
 $Map.generate = function() {
+    var lat = Number($.param=('lat')) || 39.397;
+    var lon = Number($.param=('long')) || -100.644;
+    var zoom = Number($.param=('zoom')) || 3;
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 3,
-        center: new google.maps.LatLng(39.397, -100.644),
+        zoom: zoom,
+        center: new google.maps.LatLng(lat, lon),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     var infowindow = new google.maps.InfoWindow();
