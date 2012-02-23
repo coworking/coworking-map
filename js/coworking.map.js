@@ -4,7 +4,7 @@ window.$Map = (window.Coworking.Map = function() {}).prototype = new Object();
 
 $Map.metadata_url = location.search
     .replace(/.*?data=(https?:\/\/.*?[;&]?)?.*/, '$1');
-console.log(location.search, $Map.metadata_url);
+console.log([location.search, $Map.metadata_url]);
 if (!$Map.metadata_url)
     $Map.metadata_url = 'https://raw.github.com/coworking/coworking-metadata/master/metadata.jsonp';
 
