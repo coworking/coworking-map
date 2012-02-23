@@ -2,7 +2,7 @@
 window.Coworking = {};
 window.$Map = (window.Coworking.Map = function() {}).prototype = new Object();
 
-$Map.metadata_url = $.param('src') ||
+$Map.metadata_url = $.url().param('src') ||
     'https://raw.github.com/coworking/coworking-metadata/master/metadata.jsonp';
 console.log([location.search, $Map.metadata_url]);
 
@@ -21,9 +21,9 @@ $Map.add_metadata = function(data) {
 };
 
 $Map.generate = function() {
-    var lat = Number($.param=('lat')) || 39.397;
-    var lon = Number($.param=('long')) || -100.644;
-    var zoom = Number($.param=('zoom')) || 3;
+    var lat = Number($.url().param=('lat')) || 39.397;
+    var lon = Number($.url().param=('long')) || -100.644;
+    var zoom = Number($.url().param=('zoom')) || 3;
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoom,
         center: new google.maps.LatLng(lat, lon),
