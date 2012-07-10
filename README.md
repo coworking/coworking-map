@@ -11,3 +11,5 @@ https://github.com/coworking/coworking-metadata
 The data is pulled over as a jsonp payload straight from github. So it is all very open and all very realtime.
 
 We are working on open ways to host the coworking site data, like microformats.
+
+Team:  Jacob Sayles & Victor Ung
